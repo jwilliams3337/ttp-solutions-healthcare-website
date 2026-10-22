@@ -7,7 +7,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.getAtt
 const smallScreen=matchMedia('(max-width:900px)');smallScreen.addEventListener('change',closeMenu);
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){
  const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;const element=entry.target;element.classList.add(element.matches('figure')?'arrive-image':element.matches('.leaders details,.roster>div')?'arrive-row':'arrive');observer.unobserve(element);}},{threshold:.12});
- document.querySelectorAll('.section-intro h2,.section-intro>p,.program-grid article,.approach-heading,.group-photo,.values>div,.leaders details,.staff-title,.roster>div,.questions h2,.faq,.contact-grid>div').forEach(element=>observer.observe(element));
+ document.querySelectorAll('.section-intro h2,.section-intro>p,.program-grid article,.approach-heading,.group-photo,.values>div,.leaders details,.staff-title,.roster>div,.questions h2,.faq,.contact-grid>div:not(.general-contact)').forEach(element=>observer.observe(element));
 }
 document.querySelectorAll('.request-form').forEach(form=>{
  const error=form.querySelector('.form-error');
