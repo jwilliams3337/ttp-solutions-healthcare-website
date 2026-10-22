@@ -11,3 +11,9 @@
 @media(min-width:701px) and (max-width:1000px){.approach{grid-template-columns:1fr 1fr;gap:40px}.approach-heading{grid-column:1;grid-row:1}.group-photo{grid-column:2;grid-row:1;margin-top:0}.values{grid-column:1/-1;grid-row:2;margin-top:0;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.values>div{margin-top:0}.questions{grid-template-columns:1fr;gap:30px}.questions h2{max-width:none}.staff{grid-template-columns:1fr 1.6fr}}
 @media(min-width:701px) and (max-width:900px){.program-grid{grid-template-columns:1fr;gap:50px}.program-grid article{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}.program-grid article>h3{grid-row:1/4}.program-grid article>p{grid-column:2}.program-grid article>a{grid-column:2}.program-grid h3{font-size:32px}.program-grid .program-audience{margin-top:18px}}
 @media(min-width:701px) and (max-width:900px){.program-grid article{grid-template-columns:1.2fr 1fr}.program-grid h3{font-size:30px}}
+
+/* Keep contact controls directly interactive across desktop and touch browsers. */
+.request-form{position:relative;isolation:isolate}
+.request-form input,.request-form textarea,.request-form select{position:relative;pointer-events:auto;touch-action:manipulation}
+.request-form input,.request-form textarea{-webkit-user-select:text;user-select:text;-webkit-text-fill-color:var(--ink)}
+.request-form input:focus,.request-form textarea:focus,.request-form select:focus{border-color:var(--green)}
