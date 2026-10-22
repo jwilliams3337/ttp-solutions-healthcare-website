@@ -4,7 +4,7 @@ Owner: Justin / TTP. Repository: jwilliams3337/ttp-solutions-healthcare-website.
 
 ## Website source
 
-This is the original owner-approved review website migrated as a buildless static site. HTML, CSS, JavaScript, self-hosted fonts and images are in `dist/`. The requested acronym is MHCB/PHP. The full program name remains Mental Health Skill Building; the acronym correction did not authorize a change to the full service name.
+This is the original owner-approved review website migrated as a buildless static site. HTML, CSS, JavaScript, self-hosted fonts and images are in `dist/`. The requested acronym is MHCB/PHP. The full program name is Mental Health Center-Based, as corrected by the owner on October 22, 2026.
 
 ## Local preview
 
