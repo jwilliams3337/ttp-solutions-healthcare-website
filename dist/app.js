@@ -22,8 +22,8 @@ document.querySelectorAll('.request-form').forEach(form=>{
   const name=String(data.get('name')||'').trim(),phone=String(data.get('phone')||'').trim(),email=String(data.get('email')||'').trim(),method=String(data.get('method'));
   let problem='',target;
   if(!name){problem='Please enter your name.';target=form.elements.name;}
-  else if(method==='Phone'&&phone.replace(/\D/g,'').length<7){problem='Please enter a phone number so TTP can call you, or choose email as your preferred method.';target=form.elements.phone;}
-  else if(method==='Email'&&!email){problem='Please enter an email address so TTP can email you, or choose phone as your preferred method.';target=form.elements.email;}
+  else if(method==='Phone'&&phone.replace(/\D/g,'').length<7){problem='Please enter a phone number so TTP Solutions Healthcare LLC can call you, or choose email as your preferred method.';target=form.elements.phone;}
+  else if(method==='Email'&&!email){problem='Please enter an email address so TTP Solutions Healthcare LLC can email you, or choose phone as your preferred method.';target=form.elements.email;}
   else if(email&&!form.elements.email.validity.valid){problem='Please enter a valid email address.';target=form.elements.email;}
   if(problem){review.hidden=true;error.textContent=problem;error.hidden=false;target.setAttribute('aria-invalid','true');target.focus();return;}
   const lines=[form.dataset.formKind,'',`Name: ${name}`,`Phone: ${phone||'Not provided'}`,`Email: ${email||'Not provided'}`,`Preferred contact: ${method}`];
@@ -32,13 +32,13 @@ document.querySelectorAll('.request-form').forEach(form=>{
   if(data.get('message'))lines.push('',`Non-clinical message: ${String(data.get('message')).trim()}`);
   lines.push('','Please contact me about this request. I understand this does not guarantee admission or care.');
   draft=lines.join('\n');preview.textContent=draft;
-  openEmail.href=`mailto:j.williams@ttpsolutions.org?subject=${encodeURIComponent('TTP '+form.dataset.formKind)}&body=${encodeURIComponent(draft)}`;
+  openEmail.href=`mailto:j.williams@ttpsolutions.org?subject=${encodeURIComponent('TTP Solutions Healthcare LLC '+form.dataset.formKind)}&body=${encodeURIComponent(draft)}`;
   error.hidden=true;review.hidden=false;form.querySelector('.copy-status').textContent='';
   preview.setAttribute('tabindex','-1');preview.focus();
  });
  form.querySelector('.copy-request').addEventListener('click',async()=>{
   const status=form.querySelector('.copy-status');
   try{await navigator.clipboard.writeText(draft);status.textContent='Request copied. Paste it into an email to j.williams@ttpsolutions.org and send it yourself.';}
-  catch{status.textContent='Copy is unavailable in this browser. Select the request text above and copy it, or call TTP at 800-485-5470.';}
+  catch{status.textContent='Copy is unavailable in this browser. Select the request text above and copy it, or call TTP Solutions Healthcare LLC at 800-485-5470.';}
  });
 });
