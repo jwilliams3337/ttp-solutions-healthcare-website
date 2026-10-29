@@ -21,17 +21,17 @@ Run `python3 -m http.server 8000 --directory dist` and open http://localhost:800
 
 ## Forms
 
-Both forms collect basic contact information only. They validate locally and prepare an email to j.williams@ttpsolutions.org; the visitor must explicitly open their email app and send it or copy the request. There is no form database, Netlify Forms, clinical intake submission, or server-side delivery. Never present email preparation as successful delivery. A real sent-email check requires an authorized tester and recipient confirmation.
+Both forms collect basic contact information only and submit to Netlify Forms. The form names are `intake-request` and `general-contact`. Netlify email notifications must target `info@ttpsolutions.org` for both forms. The owner reported verifying delivery for both forms on October 29, 2026. Re-test both on the final domain after cutover. No email-provider credentials are stored in this repository.
 
 Do not request diagnoses, medications, treatment histories, records, SSNs, insurance member IDs or detailed clinical information. Keep the sensitive-information warning and admission disclaimer visible.
 
 ## Pre-launch checks / remaining owner confirmations
 
-- Test desktop/mobile navigation, images, program content, leadership, FAQ, resources, careers, contacts, hours, service area, map link, email preparation, favicon and HTTPS on Netlify.
-- Justin must verify the owner-supplied DBHDS licensing wording and clinical privacy wording. The current site flags these as awaiting verification.
-- Confirm walk-in procedures and any formal clinical Notice of Privacy Practices; none has been supplied.
+- Test desktop/mobile navigation, images, program content, leadership, FAQ, resources, careers, contacts, hours, service area, map link, form delivery, favicon and HTTPS on Netlify.
+- Owner-approved website wording was confirmed October 29, 2026. Staging labels and pending-verification text have been removed.
+- Published visit wording: Please call to arrange a visit. Clinical Notice of Privacy Practices is available by contacting the team; the website privacy page is separate.
 - No payer list is published. Do not invent payers, job openings or medical claims.
-- Staging review banners and noindex remain deliberately enabled until launch. Before approved domain cutover, remove staging wording, update page metadata/structured data URLs from the review origin to https://myttphealth.org, enable indexing as appropriate, and re-test.
+- Canonical, social and structured-data URLs now target https://myttphealth.org/. Search indexing remains disabled with noindex,nofollow until domain cutover; enable indexing after the final domain and HTTPS are verified.
 - Current map is a directions link, not an embedded map.
 - Images are illustrative stock; attribution and license links are in dist/photo-credits.html. Fonts are self-hosted Sentient from Fontshare.
 
