@@ -32,13 +32,13 @@ document.querySelectorAll('.request-form').forEach(form=>{
   if(data.get('message'))lines.push('',`Non-clinical message: ${String(data.get('message')).trim()}`);
   lines.push('','Please contact me about this request. I understand this does not guarantee admission or care.');
   draft=lines.join('\n');preview.textContent=draft;
-  openEmail.href=`mailto:j.williams@ttpsolutions.org?subject=${encodeURIComponent('TTP Solutions Healthcare LLC '+form.dataset.formKind)}&body=${encodeURIComponent(draft)}`;
+  openEmail.href=`mailto:info@ttpsolutions.org?subject=${encodeURIComponent('TTP Solutions Healthcare LLC '+form.dataset.formKind)}&body=${encodeURIComponent(draft)}`;
   error.hidden=true;review.hidden=false;form.querySelector('.copy-status').textContent='';
   preview.setAttribute('tabindex','-1');preview.focus();
  });
  form.querySelector('.copy-request').addEventListener('click',async()=>{
   const status=form.querySelector('.copy-status');
-  try{await navigator.clipboard.writeText(draft);status.textContent='Request copied. Paste it into an email to j.williams@ttpsolutions.org and send it yourself.';}
+  try{await navigator.clipboard.writeText(draft);status.textContent='Request copied. Paste it into an email to info@ttpsolutions.org and send it yourself.';}
   catch{status.textContent='Copy is unavailable in this browser. Select the request text above and copy it, or call TTP Solutions Healthcare LLC at 800-485-5470.';}
  });
 });
